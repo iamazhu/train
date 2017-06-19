@@ -1,0 +1,28 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="SeatType" table="SeatType">
+
+          <!-- 主键记录编号 -->
+          <id name="seatTypeId" column="seatTypeId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 席别名称 -->
+          <property
+            name="seatTypeName"
+            column="seatTypeName"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="StationInfo" table="StationInfo">
+
+          <!-- 主键记录编号 -->
+          <id name="stationId" column="stationId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 站点名称 -->
+          <property
+            name="stationName"
+            column="stationName"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 联系人 -->
+          <property
+            name="connectPerson"
+            column="connectPerson"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 联系电话 -->
+          <property
+            name="telephone"
+            column="telephone"
+            type="string"
+            length="30"
+          />
+
+          <!-- 简单字符串属性: 邮编 -->
+          <property
+            name="postcode"
+            column="postcode"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 通讯地址 -->
+          <property
+            name="address"
+            column="address"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

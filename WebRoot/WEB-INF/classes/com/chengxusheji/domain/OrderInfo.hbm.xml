@@ -1,0 +1,112 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="OrderInfo" table="OrderInfo">
+
+          <!-- 主键记录编号 -->
+          <id name="orderId" column="orderId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 用户 -->
+          <many-to-one name="userObj"
+            column="userObj"
+            class="UserInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 车次信息 -->
+          <many-to-one name="trainObj"
+            column="trainObj"
+            class="TrainInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 车次 -->
+          <property
+            name="trainNumber"
+            column="trainNumber"
+            type="string"
+            length="20"
+          />
+
+          <!-- 多对一属性: 始发站 -->
+          <many-to-one name="startStation"
+            column="startStation"
+            class="StationInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 终到站 -->
+          <many-to-one name="endStation"
+            column="endStation"
+            class="StationInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单日期型属性: 开车日期 -->
+          <property
+            name="startDate"
+            column="startDate"
+            	type="timestamp"
+            	length="10"
+          />
+
+          <!-- 多对一属性: 席别 -->
+          <many-to-one name="seatType"
+            column="seatType"
+            class="SeatType"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 座位信息 -->
+          <property
+            name="seatInfo"
+            column="seatInfo"
+            type="string"
+            length="40"
+          />
+
+          <!-- 简单浮点型属性: 总票价 -->
+          <property
+            name="totalPrice"
+            column="totalPrice"
+            type="float"
+          />
+
+          <!-- 简单字符串属性: 开车时间 -->
+          <property
+            name="startTime"
+            column="startTime"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 终到时间 -->
+          <property
+            name="endTime"
+            column="endTime"
+            type="string"
+            length="20"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
